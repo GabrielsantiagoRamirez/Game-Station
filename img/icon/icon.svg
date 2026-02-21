@@ -1,0 +1,20 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+
+  <!-- Fondo circular -->
+  <circle cx="256" cy="256" r="240" fill="#111111"/>
+
+  <!-- Control base -->
+  <rect x="136" y="220" width="240" height="100" rx="50" fill="#1f1f1f"/>
+
+  <!-- Cruz izquierda -->
+  <rect x="180" y="245" width="20" height="50" fill="#ff7a18"/>
+  <rect x="165" y="260" width="50" height="20" fill="#ff7a18"/>
+
+  <!-- Botones derecha -->
+  <circle cx="320" cy="250" r="12" fill="#ff7a18"/>
+  <circle cx="350" cy="275" r="12" fill="#ff7a18"/>
+
+  <!-- Detalle central -->
+  <rect x="230" y="245" width="50" height="10" rx="5" fill="#444444"/>
+
+</svg>
