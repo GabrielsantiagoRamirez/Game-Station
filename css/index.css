@@ -7,11 +7,33 @@
 body {
     font-family: 'Poppins', sans-serif;
     background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-                url('../img/fondo.jpg') center/cover no-repeat;
+                url('../img/fondo.jpg') center/cover no-repeat fixed;
     color: white;
     min-height: 100vh;
+    min-height: 100dvh;
     display: flex;
     flex-direction: column;
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+}
+
+/* ABOUT PROJECT */
+.about-project {
+    padding: clamp(1rem, 4vw, 2rem) 8%;
+    background: rgba(40, 40, 40, 0.9);
+    text-align: center;
+}
+
+.about-project h2 {
+    font-size: clamp(1.25rem, 3vw, 1.5rem);
+    margin-bottom: 0.5rem;
+}
+
+.about-project p {
+    font-size: clamp(0.875rem, 2vw, 1rem);
+    opacity: 0.9;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 /* NAVBAR */
@@ -57,12 +79,13 @@ body {
 }
 
 .hero-content h1 {
-    font-size: 48px;
+    font-size: clamp(28px, 5vw, 48px);
+    line-height: 1.15;
     margin-bottom: 20px;
 }
 
 .hero-content p {
-    font-size: 18px;
+    font-size: clamp(1rem, 1.5vw, 18px);
     margin-bottom: 30px;
     opacity: 0.8;
 }
@@ -84,8 +107,9 @@ body {
 }
 
 .hero-image img {
-    width: 450px;
+    width: min(450px, 85vw);
     max-width: 100%;
+    height: auto;
 }
 
 .trailer-section {
@@ -129,19 +153,126 @@ footer {
 
 /* RESPONSIVE */
 
+/* Tablet y pantallas medianas */
 @media (max-width: 900px) {
+    .navbar {
+        padding: 16px 5%;
+    }
+
+    .logo {
+        font-size: clamp(1.25rem, 4vw, 1.75rem);
+    }
+
+    .nav-links img {
+        width: 36px;
+        margin-left: 14px;
+    }
 
     .hero {
         flex-direction: column;
         text-align: center;
         margin-top: 40px;
+        padding: 0 5%;
+        gap: 2rem;
     }
 
-    .hero-content h1 {
-        font-size: 36px;
+    .hero-content {
+        max-width: 100%;
     }
 
     .hero-image {
-        margin-top: 30px;
+        margin-top: 0;
+    }
+
+    .hero-image img {
+        width: min(380px, 90vw);
+    }
+}
+
+/* Móvil */
+@media (max-width: 600px) {
+    .navbar {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+        padding: 12px 4%;
+    }
+
+    .logo {
+        width: 100%;
+        text-align: center;
+        font-size: 1.35rem;
+    }
+
+    .nav-links {
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+    }
+
+    .nav-links img {
+        width: 32px;
+        margin-left: 0;
+        min-width: 32px;
+        min-height: 32px;
+    }
+
+    .hero {
+        margin-top: 24px;
+        padding: 0 4%;
+    }
+
+    .hero-content h1 {
+        font-size: clamp(1.5rem, 6vw, 1.75rem);
+    }
+
+    .btn-primary {
+        padding: 14px 28px;
+        font-size: 1rem;
+        min-height: 44px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .hero-image img {
+        width: min(280px, 80vw);
+    }
+
+    .about-project {
+        padding: 1rem 4%;
+    }
+}
+
+/* Móvil muy pequeño */
+@media (max-width: 380px) {
+    .nav-links img {
+        width: 28px;
+        min-width: 28px;
+        min-height: 28px;
+    }
+
+    .hero-content p {
+        font-size: 0.9rem;
+    }
+}
+
+/* Desktop grande: contenido centrado y límite de ancho */
+@media (min-width: 1200px) {
+    .hero {
+        padding: 0 clamp(8%, 12vw, 15%);
+        gap: 4rem;
+    }
+
+    .hero-content {
+        max-width: 560px;
+    }
+
+    .hero-content h1 {
+        font-size: 48px;
+    }
+
+    .hero-image img {
+        width: 480px;
     }
 }
